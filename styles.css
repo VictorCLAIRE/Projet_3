@@ -1,0 +1,57 @@
+
+/***********NAVBAR******/
+.topnav {
+    background-color: #058DF2;
+    overflow: hidden;
+  }
+.logo{
+  padding: 1px;
+  float: left;
+  height:54px;
+}
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+.deconnexion{
+  float: left;
+}
+/**********BTN************/
+.btnAjoutProduit{
+  margin: 5px;
+  text-align: center;
+}
+.btnAjoutProduit{
+  margin: 5px;
+  text-align: center;
+}
+/*************Contenu****/
+.img{
+  height: 200px;
+  width: 200px;
+}
+.ligne_produit{
+  height: 210px;
+  margin: 2px;
+  background-color: rgb(207, 204, 204);
+  overflow : hidden;
+  text-align: center;
+}
+.ligne_produit_details{
+  margin: 2px;
+  background-color: rgb(207, 204, 204);
+  overflow : hidden;
+  text-align: center;
+}
+.categorie{
+  background-color: rgb(170, 168, 168);
+  text-align: center;
+}
+body{
+  background-color:#60AFEC;
+}
