@@ -33,8 +33,8 @@ ob_start();
 <h1 class="d-flex justify-content-center">Modification du produit validée</h1>
 <!--Récupération de l'ID dans l'URL et lecture du produit by ID-->
 <?php
-$ID = $_GET['ID'];
-$update = $_POST['Description_produit_modifie'];
+$ID = htmlspecialchars($_GET['ID']);
+$update = htmlspecialchars($_POST['Description_produit_modifie']);
 $req= $db->prepare("UPDATE `produits` SET `description_produit`= '$update' WHERE `id_produit` = ?");
 $req->execute(array($ID));
 ?>
