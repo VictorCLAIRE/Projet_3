@@ -5,10 +5,13 @@
   overflow : hidden;
   text-align: center;
 }
+.modification{
+  background-color:rgb(207, 204, 204);
+}
 </style>
 <?php
 //Ici $title de template.php dans la balise <title><?= $title ></title>
-$title = "Ecommerce - DétailsProduit -";
+$title = "Ecommerce - SuppressionProduit -";
 //ob_start() démarre la temporisation de sortie. Tant qu'elle est enclenchée, aucune donnée, 
 //hormis les en-têtes, n'est envoyée au navigateur, mais temporairement mise en tampon.
 ob_start();
@@ -27,14 +30,28 @@ ob_start();
 }
 ?>
 
-<h1 class="d-flex justify-content-center">Détails du produit</h1>
+<h1 class="d-flex justify-content-center">Modification du produit validée</h1>
 <!--Récupération de l'ID dans l'URL et lecture du produit by ID-->
 <?php
 $ID = $_GET['ID'];
-
-$req = $db->prepare('SELECT * FROM produits WHERE id_produit = ?');
+$update = $_POST['Prix_produit_modifie'];
+$req= $db->prepare("UPDATE `produits` SET `prix_produit`= '$update' WHERE `id_produit` = ?");
 $req->execute(array($ID));
-$res = $req->fetch(PDO::FETCH_ASSOC);
+?>
+
+    <!--RESULTAT AFFICHE-->
+    <div class="container modification">
+        <p>VOTRE MODIFICATION:</p>
+        <p><?php echo $update?></p>
+    </div>
+
+    <div class="btnBack"> 
+        <a href="general.php" class="btn btn-primary">Retour Accueil</a>
+    </div>    
+<?php
+$req2 = $db->prepare('SELECT * FROM produits WHERE id_produit = ?');
+$req2->execute(array($ID));
+$res2 = $req2->fetch(PDO::FETCH_ASSOC);
 
 ?>
     <div class="container">
@@ -56,54 +73,19 @@ $res = $req->fetch(PDO::FETCH_ASSOC);
     <div class="container ligne_produit_details">
         <div class="row">
             <div class="col-3 container">
-                <?php echo $res['nom_produit'] ?>
+                <?php echo $res2['nom_produit'] ?>
             </div>
             <div class="col-3 container">
-                <img class="img" src="<?= $res['image_produit'] ?>" alt="<?= $res['nom_produit'] ?>"/>
+                <img class="img" src="<?= $res2['image_produit'] ?>" alt="<?= $res2['nom_produit'] ?>"/>
             </div>
             <div class="col-3 container">
-                <?php echo $res['description_produit'] ?>
+                <?php echo $res2['description_produit'] ?>
             </div>
             <div class="col-3 container">
-                <?php echo $res['prix_produit'] ?> €
+                <?php echo $res2['prix_produit'] ?> €
             </div>
         </div>
     </div>
-
-    <form action="ValidationModification_Nom.php?ID=<?=$ID?>" method="post">
-        <div class="form-group">
-            <label for="Nom_produit">Nom du produit</label>
-            <input class="form-control" required type="text" id="Nom_produit" name="Nom_produit_modifie"  >
-        </div>
-        <button type="submit" class="btn btn-success">Modifier le nom du produit</button>
-    </form>
-
-    <form action="ValidationModification_Image.php?ID=<?=$ID?>" method="post">
-        <div class="form-group">
-            <label for="Image_produit">Image du produit</label>
-            <input class="form-control" required type="text" id="Image_produit" name="Image_produit_modifie">
-        </div>
-        <button type="submit" class="btn btn-success">Modifier l'image du produit</button>
-    </form>
-
-    <form action="ValidationModification_Description.php?ID=<?=$ID?>" method="post">
-        <div class="form-group">
-            <label for="Description_produit">Description du produit</label>
-            <input class="form-control" required type="text" id="Description_produit" name="Description_produit_modifie">
-        </div>
-        <button type="submit" class="btn btn-success">Modifier la description du produit</button>
-    </form>
-    <form action="ValidationModification_Prix.php?ID=<?=$ID?>" method="post">
-        <div class="form-group">
-            <label for="Prix_produit">Prix du produit</label>
-            <input class="form-control" required type="number" min="1" max="10000000000" id="Prix_produit" name="Prix_produit_modifie">
-        </div>
-        <button type="submit" class="btn btn-success">Modifier le prix du produit</button>
-    </form>
-  
-    <div class="btnBack"> 
-        <a href="general.php" class="btn btn-primary">Retour Accueil</a>
-    </div>    
 
 <?php
 //$content de template.php definis ce qui ce trouve dans le body

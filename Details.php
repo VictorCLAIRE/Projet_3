@@ -37,6 +37,22 @@ $req->execute(array($ID));
 $res = $req->fetch(PDO::FETCH_ASSOC);
 
 ?>
+    <div class="container">
+        <div class="row categorie">
+            <div class="col-3 container">
+                <p>NOM DU PRODUIT</p>
+            </div>
+            <div class="col-3 container">
+                <p>PHOTO</p>
+            </div>
+            <div class="col-3 container">
+                <p>DESCRIPTION DU PRODUIT</p>
+            </div>
+            <div class="col-3 container">
+                <p>PRIX DU PRODUIT</p>
+            </div>
+        </div>
+    </div>
     <div class="container ligne_produit_details">
         <div class="row">
             <div class="col-3 container">

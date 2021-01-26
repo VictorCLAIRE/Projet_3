@@ -31,16 +31,12 @@ ob_start();
 <!--Récupération de l'ID dans l'URL et lecture du produit by ID-->
 <?php
 $ID = $_GET['ID'];
-echo $ID;
-
 $req = $db->prepare('DELETE FROM `produits` WHERE `id_produit`= ?');
 $req->execute(array($ID));
-
 ?>
     <div class="btnBack"> 
         <a href="general.php" class="btn btn-primary">Retour Accueil</a>
     </div>    
-
 
 <?php
 //$content de template.php definis ce qui ce trouve dans le body

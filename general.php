@@ -53,7 +53,7 @@ $req = $db->query($sql);
             <p>EN SAVOIR PLUS</p>
         </div>
         <div class="col-1 container">
-            <p>Modifier</p>
+            <p>MODIFIER</p>
         </div>
         <div class="col-2 container">
             <p>SUPRESSION DU PRODUIT</p>

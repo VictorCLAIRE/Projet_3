@@ -53,5 +53,10 @@
   text-align: center;
 }
 body{
-  background-color:#60AFEC;
+  background-color : #60AFEC;
+}
+ /**  background-color:#60AFEC;**/
+ 
+.modification{
+  background-color:rgb(207, 204, 204);
 }
