@@ -29,6 +29,7 @@ $image_produit =htmlspecialchars( $_POST['Image_produit']);
 $description_produit =htmlspecialchars( $_POST['Description_produit']);
 $prix_produit =htmlspecialchars( $_POST['Prix_produit']); 
 
+echo $description_produit;
 
 $sql ="INSERT INTO produits (nom_produit, image_produit, description_produit, prix_produit) VALUE (?,?,?,?)";
 $requete_insertion = $db->prepare($sql);
@@ -37,7 +38,7 @@ $requete_insertion->bindParam(2, $image_produit);
 $requete_insertion->bindParam(3, $description_produit);
 $requete_insertion->bindParam(4, $prix_produit);
 
-$requete_insertion->execute(array($nom_produit, $description_produit, $image_produit, $prix_produit));
+$requete_insertion->execute(array($nom_produit, $image_produit, $description_produit, $prix_produit));
 
 if($requete_insertion){
     echo "<p class='alert-success'>Votre produit à bien été ajouté !</p>";
@@ -45,7 +46,7 @@ if($requete_insertion){
     <ul>
         <li><?php echo "Ajout du nouveau produit :" . $nom_produit;?></li>
         <li><?php echo "Photo associé au produit :" . $image_produit;?></li>
-        <li><?php echo "Description de votre nouveau produit :" .$description_produit;?></li>
+        <li><?php echo "Description de votre nouveau produit :" . $description_produit;?></li>
         <li><?php echo "Prix de votre nouveau produit :" . $prix_produit;?></li>
     </ul>
     <?php

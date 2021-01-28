@@ -89,7 +89,7 @@ $res = $req->fetch(PDO::FETCH_ASSOC);
     <form action="ValidationModification_Description.php?ID=<?=$ID?>" method="post">
         <div class="form-group">
             <label for="Description_produit">Description du produit</label>
-            <input class="form-control" required type="text" id="Description_produit" name="Description_produit_modifie">
+            <textarea class="form-control" required name="Description_produit_modifie" id="Description_produit_modifie" cols="15" rows="5"></textarea>
         </div>
         <button type="submit" class="btn btn-success">Modifier la description du produit</button>
     </form>

@@ -62,7 +62,7 @@ $req = $db->query($sql);
 </div>
 
 <?php
-foreach($db->query("SELECT * FROM produits")
+foreach($db->query("SELECT * FROM `produits`ORDER BY `id_produit` DESC")
     as $row){
 ?>
     <div class="container ligne_produit"> 

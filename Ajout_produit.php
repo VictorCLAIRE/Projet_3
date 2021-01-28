@@ -21,7 +21,7 @@ ob_start();
 ?>
 
 <h1 class="d-flex justify-content-center">Ajout d'un produit</h1>
-
+        <!--Forumlaire pour modification de tel ou tel attribut, colonne, du produit sélectionné par l'ID-->
 <form action="EnregistrementProduit.php" method="post">
 
     <div class="form-group">
@@ -32,10 +32,12 @@ ob_start();
         <label for="Image_produit">Image du produit</label>
         <input class="form-control" required type="text" id="Image_produit" name="Image_produit">
     </div>
-    <div class="form-group">
+    
+    <div class="form-group"> 
         <label for="Description_produit">Description du produit</label>
-        <input class="form-control" required type="text" id="Description_produit" name="Description_produit">
+        <textarea class="form-control" required name="Description_produit" id="Description_produit" cols="15" rows="5"></textarea>
     </div>
+ 
     <div class="form-group">
         <label for="Prix_produit">Prix du produit</label>
         <input class="form-control" required type="number" min="1" max="10000000000" id="Prix_produit" name="Prix_produit">
