@@ -1,11 +1,3 @@
-
-<style>
-    .btnAjoutProduit{
-  margin: 5px;
-  text-align: center;
-}
-
-</style>
 <?php
 //Ici $title de template.php dans la balise <title><?= $title ></title>
 $title = "Ecommerce - NOS PRODUITS -";

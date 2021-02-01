@@ -1,25 +1,26 @@
-
+html{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /***********NAVBAR******/
 .topnav {
-    background-color: #058DF2;
-    overflow: hidden;
-  }
-.logo{
-  padding: 1px;
-  float: left;
-  height:54px;
+  background-color: #058DF2;
+  overflow: hidden;
 }
 .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-.deconnexion{
-  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.btnleft{
+  float: left;    
+}
+.btnright{
+  float: right;
 }
 /**********BTN************/
 .btnAjoutProduit{
@@ -29,6 +30,20 @@
 .btnAjoutProduit{
   margin: 5px;
   text-align: center;
+}
+/************TITRE**********/
+h1{
+  text-align: center;
+  font-size: 30px;
+}
+/***************LOGIN**********/
+#login-form{
+  text-align: center;
+  border: solid black 3px;
+  border-radius: 4px;
+  background-color: lime;
+  margin: 2px;
+  width: 500px;
 }
 /*************Contenu****/
 .img{

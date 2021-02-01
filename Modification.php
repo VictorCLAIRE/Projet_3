@@ -27,7 +27,7 @@ ob_start();
 }
 ?>
 
-<h1 class="d-flex justify-content-center">Détails du produit</h1>
+<h1 class="d-flex justify-content-center">Modification du produit</h1>
 <!--Récupération de l'ID dans l'URL et lecture du produit by ID-->
 <?php
 $ID = $_GET['ID'];
@@ -73,7 +73,7 @@ $res = $req->fetch(PDO::FETCH_ASSOC);
     <form action="ValidationModification_Nom.php?ID=<?=$ID?>" method="post">
         <div class="form-group">
             <label for="Nom_produit">Nom du produit</label>
-            <input class="form-control" required type="text" id="Nom_produit" name="Nom_produit_modifie"  >
+            <input value="<?= $res['nom_produit']?>" class="form-control" required type="text" id="Nom_produit" name="Nom_produit_modifie"  >
         </div>
         <button type="submit" class="btn btn-success">Modifier le nom du produit</button>
     </form>
@@ -81,7 +81,7 @@ $res = $req->fetch(PDO::FETCH_ASSOC);
     <form action="ValidationModification_Image.php?ID=<?=$ID?>" method="post">
         <div class="form-group">
             <label for="Image_produit">Image du produit</label>
-            <input class="form-control" required type="text" id="Image_produit" name="Image_produit_modifie">
+            <input value="<?= $res['image_produit']?>" class="form-control" required type="text" id="Image_produit" name="Image_produit_modifie">
         </div>
         <button type="submit" class="btn btn-success">Modifier l'image du produit</button>
     </form>
@@ -89,14 +89,14 @@ $res = $req->fetch(PDO::FETCH_ASSOC);
     <form action="ValidationModification_Description.php?ID=<?=$ID?>" method="post">
         <div class="form-group">
             <label for="Description_produit">Description du produit</label>
-            <textarea class="form-control" required name="Description_produit_modifie" id="Description_produit_modifie" cols="15" rows="5"></textarea>
+            <textarea class="form-control" required name="Description_produit_modifie" id="Description_produit_modifie" cols="15" rows="5"><?= $res['description_produit']?>"</textarea>
         </div>
         <button type="submit" class="btn btn-success">Modifier la description du produit</button>
     </form>
     <form action="ValidationModification_Prix.php?ID=<?=$ID?>" method="post">
         <div class="form-group">
             <label for="Prix_produit">Prix du produit</label>
-            <input class="form-control" required type="number" min="1" max="10000000000" id="Prix_produit" name="Prix_produit_modifie">
+            <input value="<?= $res['prix_produit']?>" class="form-control" required type="number" min="1" max="10000000000" id="Prix_produit" name="Prix_produit_modifie">
         </div>
         <button type="submit" class="btn btn-success">Modifier le prix du produit</button>
     </form>

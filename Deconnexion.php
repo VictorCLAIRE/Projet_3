@@ -7,6 +7,22 @@ ob_start();
 ?>
 <h1>Déconnexion</h1>
 
+<?php
+//On demmare la session
+session_start();
+
+//On detruit les varaibles de session
+session_unset();
+
+//Destruire la session
+session_destroy();
+
+?>
+<div>
+    <p>Vous êtes déconnecté!</p>
+</div>
+
+
 
 
 
